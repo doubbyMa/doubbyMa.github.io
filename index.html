@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="baidu-site-verification" content="VJkvQnTcVG"/>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="The website for CitrusEducation">
+    <meta name="author" content="Sailung Yeung sy2823@columbia.edu">
     <title>CitrusEdu</title>
 	
 	<!-- core CSS -->
@@ -15,6 +15,8 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="form.js"></script>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -24,6 +26,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    
+
 </head><!--/head-->
 
 <body class="homepage">
@@ -467,16 +471,15 @@
                 <h2>赶紧来报名吧！！</h2>
             </div> 
             <div class="row contact-wrap"> 
-                <div class="status alert alert-success" style="display: none"></div>
-                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="upload.php">
+                <form role="form" method="post" id="reused_form" enctype=&quot;multipart/form-data&quot; >
                     <div class="col-sm-5 col-sm-offset-1">
                         <div class="form-group">
                             <label>姓名 *</label>
-                            <input type="text" name="name" class="form-control" required="required">
+                            <input type="text" name="name" class="form-control" required="required" maxlength='50'>
                         </div>
                         <div class="form-group">
                             <label>邮箱 *</label>
-                            <input type="email" name="email" class="form-control" required="required">
+                            <input type="email" name="email" class="form-control" required="required" maxlength='50'>
                         </div>
                         <div class="form-group">
                             <label>电话号码</label>
@@ -494,17 +497,19 @@
                     <div class="col-sm-5">
                         <div class="form-group">
                             <label>问题 *</label>
-                            <input type="text" name="subject" class="form-control" required="required">
+                            <input type="text" name="subject" class="form-control" required="required" maxlength='150'>
                         </div>
                         <div class="form-group">
                             <label>上传简历 *</label>
                             <input type="file" name="usr_file" required="required">
                         </div>                        
                         <div class="form-group">
-                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Submit</button>
+                            <button type="submit" name="submit" class="btn btn-primary btn-lg">Submit</button>
                         </div>
                     </div>
                 </form> 
+                <div id="success_message" style="width:100%; height:100%; display:none; "> <h3>Sent your message successfully!</h3> </div>
+                <div id="error_message" style="width:100%; height:100%; display:none; "> <h3>Error</h3> Sorry there was an error sending your form. </div>
             </div><!--/.row-->
         </div><!--/.container-->
     </section><!--/#contact-page-->
